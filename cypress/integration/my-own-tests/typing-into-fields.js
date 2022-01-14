@@ -9,12 +9,8 @@ describe("Test urls", () => {
 
     cy.contains("Login").click();
 
-    cy.contains("Forgot password").click();
-
-    cy.url().should("include", "forgotpassword");
-
-    cy.url().should("eq", "https://groovin.vercel.app/forgotpassword");
-
-    cy.go("back");
+    cy.get('input[name="email"]').type("admin@gmail.com");
+    cy.get('input[name="password"]').type("admin");
+    cy.get("form").submit();
   });
 });
