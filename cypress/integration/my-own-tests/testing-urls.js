@@ -9,5 +9,6 @@ describe("Test urls", () => {
     cy.contains("Forgot password").click();
     cy.url().should("include", "forgotpassword");
     cy.url().should("eq", "https://groovin.vercel.app/forgotpassword");
+    cy.go("back");
   });
 });
